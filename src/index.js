@@ -11,12 +11,9 @@ const store = createStore(reducer);
 
 function App() {
   return (
-    <div className="App">
-      <h1>recall5 app</h1>
-      <Provider store={store}>
-        <Navbar />
-      </Provider>
-    </div>
+    <Provider store={store}>
+      <Navbar />
+    </Provider>
   );
 }
 

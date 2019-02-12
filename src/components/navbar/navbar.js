@@ -3,8 +3,8 @@ import { connect } from "react-redux";
 import { reloadHome } from "../../actions";
 
 let Navbar = ({ reloadHome, isLoading }) => (
-  <div onClick={() => reloadHome()}>
-    This is the navbar {isLoading ? "loading" : "not loading"}
+  <div className="navbarContainer">
+    <h1 onClick={() => reloadHome()}>recall5</h1>
   </div>
 );
 
