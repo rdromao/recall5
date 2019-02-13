@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Navbar from "./components/navbar/navbar";
+import Content from "./components/content/content";
 import { createStore } from "redux";
 import reducer from "./reducers";
 import { Provider } from "react-redux";
@@ -13,6 +14,7 @@ function App() {
   return (
     <Provider store={store}>
       <Navbar />
+      <Content />
     </Provider>
   );
 }

@@ -2,12 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import { reloadHome } from "../../actions";
 
-let Navbar = ({ reloadHome, isLoading }) => (
-  <div className="navbarContainer">
-    <div className="navbarTitle" onClick={() => reloadHome()}>
-      recall5
-    </div>
-  </div>
+let Content = ({ reloadHome, isLoading }) => (
+  <div className="contentContainer">Add a reminder…</div>
 );
 
 const mapDispatchToProps = dispatch => ({
@@ -22,8 +18,8 @@ const mapStateToProps = state => {
   };
 };
 
-Navbar = connect(
+Content = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Navbar);
-export default Navbar;
+)(Content);
+export default Content;

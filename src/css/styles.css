@@ -1,18 +1,33 @@
-@import url('https://fonts.googleapis.com/css?family=Baloo+Thambi');
+@import url("https://fonts.googleapis.com/css?family=Baloo+Thambi|Chivo|Nunito+Sans");
 
 html {
-  background-color: #425bd7;
+  background-color: #e4dfda;
+  font-family: "Nunito Sans";
+}
+
+body {
+  margin: 0px;
 }
 
 .App {
   font-family: sans-serif;
   text-align: center;
-  padding: 300px;
 }
 
-h1 {
-  font-family: 'Baloo Thambi';
-  font-size: 72px;
+.navbarContainer {
+  background-color: #425bd7;
+  box-shadow: 0px 4px 16px #aaa;
+  padding: 8px;
+}
+
+.navbarTitle {
+  font-family: "Baloo Thambi";
   font-weight: 100;
+  font-size: 24px;
   color: #fff;
+}
+
+.contentContainer {
+  text-align: center;
+  padding-top: 32px;
 }
