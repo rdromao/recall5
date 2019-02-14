@@ -5,7 +5,7 @@ import { reloadHome } from "../../actions";
 let Navbar = ({ reloadHome, isLoading }) => (
   <div className="navbarContainer">
     <div className="navbarTitle" onClick={() => reloadHome()}>
-      recall5
+      recall5 {isLoading ? "cargando" : "no cargando"}
     </div>
   </div>
 );

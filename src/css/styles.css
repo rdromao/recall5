@@ -3,6 +3,7 @@
 html {
   background-color: #e4dfda;
   font-family: "Nunito Sans";
+  color: #343434;
 }
 
 body {
@@ -30,4 +31,24 @@ body {
 .contentContainer {
   text-align: center;
   padding-top: 32px;
+}
+
+.reminderContainer {
+  cursor: pointer;
+  background-color: #fff;
+  box-shadow: 0px 4px 8px #aaa;
+  border: 1px solid #eee;
+  text-align: left;
+  margin-left: 15%;
+  margin-right: 15%;
+  padding: 16px;
+  transition: all 0.2s ease-out;
+}
+
+.reminderContainer:hover {
+  box-shadow: 0px 4px 16px #666;
+}
+
+.textMuted {
+  color: #aaa;
 }
