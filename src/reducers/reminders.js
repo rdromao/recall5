@@ -1,10 +1,11 @@
 const initialState = {
   isLoading: true,
   list: [
+    /*
     "Videoconferencia Amaris mañana jueves 14/02 a las 12 por Skype",
     "ITALO MANDÓ LA PRUEBA? PONERME CON ESO",
     "Ir a la USB: recaudos Programa y Pénsum y entregar en DACE junto a comprobante de pago",
-    "Buscarle precios solidarios de CPU a la mamá de la beba"
+    "Buscarle precios solidarios de CPU a la mamá de la beba"*/
   ],
   addReminderValue: ""
 };
@@ -13,7 +14,7 @@ const reminders = (state = initialState, action) => {
   console.log("In reminders reducer");
   switch (action.type) {
     case "FETCH_REMINDERS":
-      console.log("In reminders reducer fetching..");
+      console.log("Fetching!!!..");
       return {
         ...state,
         isLoading: true
@@ -23,18 +24,15 @@ const reminders = (state = initialState, action) => {
       console.log(state.list);
       return {
         ...state,
-        isLoading: false
+        isLoading: false,
+        list: action.reminders
       };
     case "UPDATE_NEW_REMINDER":
-      console.log("Reminder value to update: ");
-      console.log(action.newReminderValue);
       return {
         ...state,
         addReminderValue: action.newReminderValue
       };
     case "ADD_REMINDER":
-      console.log("Reminder to add: ");
-      console.log(state.addReminderValue);
       return {
         ...state,
         list: [...state.list, state.addReminderValue],

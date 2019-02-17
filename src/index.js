@@ -2,13 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Navbar from "./components/navbar/navbar";
 import Content from "./components/content/content";
-import { createStore } from "redux";
+import thunkMiddleware from "redux-thunk";
+import { createStore, applyMiddleware } from "redux";
 import reducer from "./reducers";
 import { Provider } from "react-redux";
 
 import "./css/styles.css";
 
-const store = createStore(reducer);
+const store = createStore(reducer, applyMiddleware(thunkMiddleware));
 
 function App() {
   return (

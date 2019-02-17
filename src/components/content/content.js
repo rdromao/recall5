@@ -6,13 +6,13 @@ import AddReminderInput from "./addReminder";
 
 class Content extends React.Component {
   componentDidMount() {
-    fetchRemindersCall();
+    this.props.fetchRemindersCall();
   }
 
   render() {
     let remindersElements = this.props.remindersList.map((reminder, i) => (
-      <div key={i} className="reminderContainer">
-        {reminder}
+      <div key={reminder.id} className="reminderContainer">
+        {reminder.content}
       </div>
     ));
 
