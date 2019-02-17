@@ -1,8 +1,10 @@
 import { combineReducers } from "redux";
 import navbar from "./navbar";
+import reminders from "./reminders";
 
-const r5RootReducer = combineReducers({
-  navbar
+const recall5RootReducer = combineReducers({
+  navbar,
+  reminders
 });
 
-export default r5RootReducer;
+export default recall5RootReducer;

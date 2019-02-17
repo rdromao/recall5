@@ -1,35 +1,45 @@
 import React from "react";
 import { connect } from "react-redux";
 import { reloadHome } from "../../actions";
+import { fetchRemindersCall } from "../../actions";
+import AddReminderInput from "./addReminder";
 
-const dummyReminders = [
-  "Videoconferencia Amaris mañana jueves 14/02 a las 12 por Skype",
-  "ITALO MANDÓ LA PRUEBA? PONERME CON ESO",
-  "Ir a la USB: recaudos Programa y Pénsum y entregar en DACE junto a comprobante de pago",
-  "Buscarle precios solidarios de CPU a la mamá de la beba"
-];
-const dummyRemindersList = dummyReminders.map(reminder => (
-  <div className="reminderContainer">{reminder}</div>
-));
+class Content extends React.Component {
+  componentDidMount() {
+    fetchRemindersCall();
+  }
 
-let Content = ({ reloadHome, isLoading }) => (
-  <div>
-    <div className="contentContainer">
-      {dummyRemindersList}
-      <div className="reminderContainer textMuted">Add a reminder</div>
-    </div>
-  </div>
-);
+  render() {
+    let remindersElements = this.props.remindersList.map((reminder, i) => (
+      <div key={i} className="reminderContainer">
+        {reminder}
+      </div>
+    ));
+
+    return (
+      <div>
+        <div className="contentContainer">
+          {remindersElements}
+          <AddReminderInput />
+        </div>
+      </div>
+    );
+  }
+}
 
 const mapDispatchToProps = dispatch => ({
   reloadHome: () => {
     dispatch(reloadHome());
+  },
+  fetchRemindersCall: () => {
+    dispatch(fetchRemindersCall());
   }
 });
 
 const mapStateToProps = state => {
   return {
-    isLoading: state.navbar.isLoading
+    isLoading: state.navbar.isLoading,
+    remindersList: state.reminders.list
   };
 };
 
