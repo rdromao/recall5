@@ -1,25 +1,26 @@
 {
   "name": "recall5",
   "version": "1.0.0",
-  "description": "Manage reminders. Simple and beautiful.",
-  "keywords": [],
-  "main": "src/index.js",
-  "dependencies": {
-    "cross-fetch": "3.0.1",
-    "react": "16.5.2",
-    "react-dom": "16.5.2",
-    "react-ionicons": "3.0.1",
-    "react-redux": "6.0.0",
-    "react-scripts": "2.0.3",
-    "redux": "4.0.1",
-    "redux-thunk": "2.3.0"
-  },
-  "devDependencies": {},
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node server.js",
+    "build": "next build",
+    "start": "next start"
   },
-  "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"]
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cross-fetch": "^3.0.2",
+    "express": "^4.16.4",
+    "next": "^8.0.4",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-ionicons": "^3.0.1",
+    "react-redux": "^7.0.1",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
+  }
 }

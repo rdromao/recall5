@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css?family=Baloo+Thambi|Chivo|Nunito+Sans");
+
+html {
+  background-color: #e4dfda;
+  font-family: "Nunito Sans";
+  color: #343434;
+}
+
+body {
+  margin: 0px;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.navbarContainer {
+  background-color: #425bd7;
+  box-shadow: 0px 4px 16px #aaa;
+  padding: 8px;
+}
+
+.navbarTitle {
+  font-family: "Baloo Thambi";
+  font-weight: 100;
+  font-size: 24px;
+  color: #fff;
+}
+
+.contentContainer {
+  text-align: center;
+  padding-top: 32px;
+}
+
+.reminderContainer {
+  cursor: pointer;
+  background-color: #fff;
+  box-shadow: 0px 4px 8px #aaa;
+  border: 1px solid #eee;
+  text-align: left;
+  margin-left: 15%;
+  margin-right: 15%;
+  padding: 16px;
+  transition: all 0.2s ease-out;
+}
+
+.newReminderInput {
+  border: none;
+  width: 100%;
+}
+
+.newReminderInput:focus {
+  outline: none;
+}
+
+.reminderContainer:hover {
+  box-shadow: 0px 4px 16px #666;
+}
+
+.textMuted {
+  color: #aaa;
+}
