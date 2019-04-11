@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { updateNewReminder, addReminder } from "../../actions";
+import { updateNewReminder, newReminderCall } from "../../actions";
 
 class AddReminderInput extends React.Component {
   constructor(props) {
@@ -16,7 +16,7 @@ class AddReminderInput extends React.Component {
     // input box, submit it, else just update value
     if (!this.reminderBlank(e.target.value) && e.key === "Enter") {
       console.log("Enter key was pressed and theres something written");
-      this.props.addReminder();
+      this.props.addReminder(this.props.addReminderValue);
     }
   }
 
@@ -55,9 +55,9 @@ const mapDispatchToProps = dispatch => ({
     console.log(newReminderValue);
     dispatch(updateNewReminder(newReminderValue));
   },
-  addReminder: () => {
+  addReminder: (content) => {
     console.log("Add new reminder to list");
-    dispatch(addReminder());
+    dispatch(newReminderCall(content));
   }
 });
 

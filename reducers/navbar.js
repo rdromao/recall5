@@ -1,5 +1,5 @@
 const initialState = {
-    isLoading: true
+    isLoading: false
   };
   
   const navbar = (state = initialState, action) => {

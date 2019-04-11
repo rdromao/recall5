@@ -27,23 +27,44 @@ export const updateNewReminder = newReminderValue => {
   };
 };
 
-export const addReminder = () => {
+export const selectReminder = selectReminderId => {
   return {
-    type: "ADD_REMINDER"
+    type: "SELECT_REMINDER",
+    selectReminderId
   };
 };
 
+
 // ASYNC FUNCTIONS
 export function fetchRemindersCall() {
-  console.log("Calling fetch reminders call");
   return dispatch => {
-    fetch("https://recall5--rdromao.repl.co/reminders")
+    fetch("http://localhost:3000/reminders", {cache: "no-store"})
       .then(res => res.json())
       .then(json => dispatch(receiveReminders(json)))
       .then(error => console.log(error));
-  };
-  /*return dispatch => {
-    console.log("Dispatching receiveReminders");
-    dispatch(receiveReminders(["uno", "dos"]));
-  };*/
+  }
+}
+
+export function newReminderCall(content) {
+  return dispatch => {
+    fetch("http://localhost:3000/reminders", {
+        method: 'POST',
+        headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({content: content})
+      })
+      .then(dispatch(updateNewReminder("")))
+      .then(dispatch(fetchRemindersCall()))
+      .then(error => console.log(error));
+  }
+}
+
+export function deleteReminder(id) {
+  return dispatch => {
+    fetch("http://localhost:3000/reminders/"+id, {method: 'DELETE'})
+      .then(dispatch(fetchRemindersCall()))
+      .then(error => console.log(error));
+  }
 }

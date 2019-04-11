@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { reloadHome } from "../../actions";
 import { fetchRemindersCall } from "../../actions";
 import AddReminderInput from "./addReminder";
+import Reminder from "./reminder"
 
 class Content extends React.Component {
   componentDidMount() {
@@ -11,9 +12,7 @@ class Content extends React.Component {
 
   render() {
     let remindersElements = this.props.remindersList.map((reminder, i) => (
-      <div key={reminder.id} className="reminderContainer">
-        {reminder.content}
-      </div>
+      <Reminder key={reminder.id} reminder={reminder}/>
     ));
 
     return (
@@ -39,6 +38,7 @@ const mapDispatchToProps = dispatch => ({
 const mapStateToProps = state => {
   return {
     isLoading: state.navbar.isLoading,
+    selectedReminderId: state.reminders.selectedId,
     remindersList: state.reminders.list
   };
 };

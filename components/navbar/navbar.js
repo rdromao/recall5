@@ -6,7 +6,7 @@ import IosRefresh from "react-ionicons/lib/IosRefresh";
 let Navbar = ({ reloadHome, isLoading, remindersCount }) => (
   <div className="navbarContainer">
     <div className="navbarTitle" onClick={() => reloadHome()}>
-      recall5 {remindersCount && remindersCount}{" "}
+      recall5{" "}
       {isLoading && <IosRefresh fontSize="24px" color="#fff" rotate={true} />}
     </div>
   </div>
@@ -20,7 +20,7 @@ const mapDispatchToProps = dispatch => ({
 
 const mapStateToProps = state => {
   return {
-    isLoading: state.navbar.isLoading,
+    isLoading: state.reminders.isLoading,
     remindersCount: state.reminders.list.length
   };
 };

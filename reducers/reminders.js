@@ -1,12 +1,7 @@
 const initialState = {
     isLoading: true,
-    list: [
-      /*
-      "Videoconferencia Amaris mañana jueves 14/02 a las 12 por Skype",
-      "ITALO MANDÓ LA PRUEBA? PONERME CON ESO",
-      "Ir a la USB: recaudos Programa y Pénsum y entregar en DACE junto a comprobante de pago",
-      "Buscarle precios solidarios de CPU a la mamá de la beba"*/
-    ],
+    list: [],
+    selectedId: null,
     addReminderValue: ""
   };
   
@@ -31,6 +26,11 @@ const initialState = {
         return {
           ...state,
           addReminderValue: action.newReminderValue
+        };
+      case "SELECT_REMINDER":
+        return {
+          ...state,
+          selectedId: action.selectReminderId
         };
       case "ADD_REMINDER":
         return {
