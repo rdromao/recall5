@@ -38,7 +38,7 @@ export const selectReminder = selectReminderId => {
 // ASYNC FUNCTIONS
 export function fetchRemindersCall() {
   return dispatch => {
-    fetch("http://localhost:3000/reminders", {cache: "no-store"})
+    fetch("/reminders", {cache: "no-store"})
       .then(res => res.json())
       .then(json => dispatch(receiveReminders(json)))
       .then(error => console.log(error));
@@ -47,7 +47,7 @@ export function fetchRemindersCall() {
 
 export function newReminderCall(content) {
   return dispatch => {
-    fetch("http://localhost:3000/reminders", {
+    fetch("/reminders", {
         method: 'POST',
         headers: {
         'Accept': 'application/json',
@@ -63,7 +63,7 @@ export function newReminderCall(content) {
 
 export function deleteReminder(id) {
   return dispatch => {
-    fetch("http://localhost:3000/reminders/"+id, {method: 'DELETE'})
+    fetch("/reminders/"+id, {method: 'DELETE'})
       .then(dispatch(fetchRemindersCall()))
       .then(error => console.log(error));
   }
